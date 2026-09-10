@@ -146,7 +146,14 @@ col1, col2 = st.columns([1, 1], gap="medium")
 with col1:
     year = st.number_input("Year", min_value=1990, max_value=2026, value=2024, step=1)
     present_price = st.number_input("Present Price (in Lakhs)", min_value=0.0, value=8.0, step=0.25)
-    owner = st.selectbox("Owner", [0, 1, 2])
+    owner = st.selectbox(
+    "Owner",
+    [0, 1, 2],
+    format_func=lambda x: {
+        0: "First Hand",
+        1: "Second Hand",
+        2: "Third Hand or More"
+    }[x])
     selling_type = st.selectbox("Selling Type", ["Dealer", "Individual"])
 
 with col2:
@@ -187,3 +194,4 @@ if st.button("PREDICT SELLING PRICE"):
         st.success(f"Estimated Valuation: ₹{prediction[0]:.2f} Lakhs")
     except Exception as e:
         st.error(f"Error predicting price: {e}")
+        
