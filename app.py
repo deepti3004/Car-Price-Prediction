@@ -15,7 +15,6 @@ def get_base64_img(image_path):
         return ""
 
 car_silhouette_b64 = get_base64_img("car.png")
-blue_car_b64 = get_base64_img("car_icon.png")
 
 # Custom Dark Glassmorphism CSS
 st.markdown(f"""
@@ -126,8 +125,6 @@ st.markdown(f"""
 </style>
 """, unsafe_allow_html=True)
 
-# Anchor for card styling
-# st.markdown('<div class="card-anchor"></div>', unsafe_allow_html=True)
 
 # Header with car icon
 st.markdown(f"""
