@@ -158,7 +158,7 @@ cd Car-Price-Prediction
 ### 2. Create and activate a virtual environment
 
 ```bash
-python -m venv .venv
+py -3.12 -m venv .venv
 ```
 
 Windows:
@@ -170,6 +170,7 @@ Windows:
 ### 3. Install dependencies
 
 ```bash
+python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
