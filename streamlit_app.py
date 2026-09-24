@@ -186,9 +186,9 @@ if st.button("PREDICT SELLING PRICE"):
 
         input_data = input_data[scaler.feature_names_in_]
         input_scaled = scaler.transform(input_data)
-        prediction = model.predict(input_scaled)
+        prediction = model.predict(input_scaled, verbose=0).item()
 
-        st.success(f"Estimated Valuation: ₹{prediction[0]:.2f} Lakhs")
+        st.success(f"Estimated Valuation: ₹{prediction:.2f} Lakhs")
     except Exception as e:
         st.error(f"Error predicting price: {e}")
         
